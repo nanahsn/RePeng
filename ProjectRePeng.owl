@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+<rdf:RDF xmlns="http://example.com/ontology#"
+     xml:base="http://example.com/ontology"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://example.com/ontology#Buku"/>
+    <owl:Class rdf:about="http://example.com/ontology#Pengarang"/>
+    <owl:Class rdf:about="http://example.com/ontology#Penerbit"/>
+    <owl:Class rdf:about="http://example.com/ontology#Anggota"/>
+    <owl:Class rdf:about="http://example.com/ontology#Peminjaman"/>
+    <owl:Class rdf:about="http://example.com/ontology#Lokasi"/>
+    <owl:Class rdf:about="http://example.com/ontology#Resensi"/>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#judul"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#penulis"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#penerbit"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#nomorISBN"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#tahunKelahiran"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#karya"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#alamat"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#tahunPendirian"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#tanggalPinjam"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#tanggalPengembalian"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#bukuDipinjam"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#statusPeminjaman"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#tempat"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#penulisResensi"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#rating"/>
+    <owl:ObjectProperty rdf:about="http://example.com/ontology#komentar"/>
+
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://example.com/ontology#nama"/>
+    <owl:DatatypeProperty rdf:about="http://example.com/ontology#nomorAnggota"/>
+
+    <!-- Individuals -->
+    <rdf:Description rdf:about="http://example.com/ontology#HarryPotterAndTheSorcerersStone">
+        <rdf:type rdf:resource="http://example.com/ontology#Buku"/>
+        <judul>Harry Potter and the Sorcerer's Stone</judul>
+        <penulis>J.K. Rowling</penulis>
+        <penerbit>Bloomsbury Publishing</penerbit>
+        <nomorISBN>978-0747532699</nomorISBN>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#ToKillAMockingbird">
+        <rdf:type rdf:resource="http://example.com/ontology#Buku"/>
+        <judul>To Kill a Mockingbird</judul>
+        <penulis>Harper Lee</penulis>
+        <penerbit>J. B. Lippincott &amp; Co.</penerbit>
+        <nomorISBN>978-0060935467</nomorISBN>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#1984">
+        <rdf:type rdf:resource="http://example.com/ontology#Buku"/>
+        <judul>1984</judul>
+        <penulis>George Orwell</penulis>
+        <penerbit>Secker &amp; Warburg</penerbit>
+        <nomorISBN>978-0451524935</nomorISBN>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#J.K.Rowling">
+        <rdf:type rdf:resource="http://example.com/ontology#Pengarang"/>
+        <nama>J.K. Rowling</nama>
+        <tahunKelahiran>1965</tahunKelahiran>
+        <karya rdf:resource="http://example.com/ontology#HarryPotterAndTheSorcerersStone"/>
+        <karya rdf:resource="http://example.com/ontology#HarryPotterAndTheChamberOfSecrets"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#HarperLee">
+        <rdf:type rdf:resource="http://example.com/ontology#Pengarang"/>
+        <nama>Harper Lee</nama>
+        <tahunKelahiran>1926</tahunKelahiran>
+        <karya rdf:resource="http://example.com/ontology#ToKillAMockingbird"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#GeorgeOrwell">
+        <rdf:type rdf:resource="http://example.com/ontology#Pengarang"/>
+        <nama>George Orwell</nama>
+        <tahunKelahiran>1903</tahunKelahiran>
+        <karya rdf:resource="http://example.com/ontology#1984"/>
+        <karya rdf:resource="http://example.com/ontology#AnimalFarm"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#BloomsburyPublishing">
+        <rdf:type rdf:resource="http://example.com/ontology#Penerbit"/>
+        <nama>Bloomsbury Publishing</nama>
+        <alamat>50 Bedford Square, London</alamat>
+        <tahunPendirian>1986</tahunPendirian>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#JBLippincottAndCo">
+        <rdf:type rdf:resource="http://example.com/ontology#Penerbit"/>
+        <nama>J. B. Lippincott &amp; Co.</nama>
+        <alamat>227 South Sixth Street, Philadelphia</alamat>
+        <tahunPendirian>1836</tahunPendirian>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#SeckerAndWarburg">
+        <rdf:type rdf:resource="http://example.com/ontology#Penerbit"/>
+        <nama>Secker &amp; Warburg</nama>
+        <alamat>20 Vauxhall Bridge Road, London</alamat>
+        <tahunPendirian>1910</tahunPendirian>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#JohnSmith">
+        <rdf:type rdf:resource="http://example.com/ontology#Anggota"/>
+        <nama>John Smith</nama>
+        <alamat>123 Main Street</alamat>
+        <nomorAnggota>A001</nomorAnggota>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#SarahJohnson">
+        <rdf:type rdf:resource="http://example.com/ontology#Anggota"/>
+        <nama>Sarah Johnson</nama>
+        <alamat>456 Elm Street</alamat>
+        <nomorAnggota>A002</nomorAnggota>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#MichaelBrown">
+        <rdf:type rdf:resource="http://example.com/ontology#Anggota"/>
+        <nama>Michael Brown</nama>
+        <alamat>789 Oak Avenue</alamat>
+        <nomorAnggota>A003</nomorAnggota>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#Peminjaman1">
+        <rdf:type rdf:resource="http://example.com/ontology#Peminjaman"/>
+        <tanggalPinjam>2023-06-01</tanggalPinjam>
+        <tanggalPengembalian>2023-06-15</tanggalPengembalian>
+        <bukuDipinjam rdf:resource="http://example.com/ontology#HarryPotterAndTheSorcerersStone"/>
+        <statusPeminjaman>Selesai</statusPeminjaman>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#Peminjaman2">
+        <rdf:type rdf:resource="http://example.com/ontology#Peminjaman"/>
+        <tanggalPinjam>2023-05-20</tanggalPinjam>
+        <tanggalPengembalian>2023-06-05</tanggalPengembalian>
+        <bukuDipinjam rdf:resource="http://example.com/ontology#ToKillAMockingbird"/>
+        <statusPeminjaman>Selesai</statusPeminjaman>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#Peminjaman3">
+        <rdf:type rdf:resource="http://example.com/ontology#Peminjaman"/>
+        <tanggalPinjam>2023-06-10</tanggalPinjam>
+        <tanggalPengembalian>2023-06-24</tanggalPengembalian>
+        <bukuDipinjam rdf:resource="http://example.com/ontology#1984"/>
+        <statusPeminjaman>Aktif</statusPeminjaman>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#RakA1">
+        <rdf:type rdf:resource="http://example.com/ontology#Lokasi"/>
+        <tempat>Lantai 1, Baris A</tempat>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#RakB2">
+        <rdf:type rdf:resource="http://example.com/ontology#Lokasi"/>
+        <tempat>Lantai 2, Baris B</tempat>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#Resensi1">
+        <rdf:type rdf:resource="http://example.com/ontology#Resensi"/>
+        <bukuDipinjam rdf:resource="http://example.com/ontology#HarryPotterAndTheSorcerersStone"/>
+        <penulisResensi>John Smith</penulisResensi>
+        <rating>5</rating>
+        <komentar>Great book!</komentar>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.com/ontology#Resensi2">
+        <rdf:type rdf:resource="http://example.com/ontology#Resensi"/>
+        <bukuDipinjam rdf:resource="http://example.com/ontology#ToKillAMockingbird"/>
+        <penulisResensi>Sarah Johnson</penulisResensi>
+        <rating>4</rating>
+        <komentar>Very engaging story.</komentar>
+    </rdf:Description>
+
+</rdf:RDF>
